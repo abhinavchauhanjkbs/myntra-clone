@@ -1,7 +1,8 @@
 {
   "name": "myntra-clone",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A modern e-commerce web app built with React and Redux",
   "type": "module",
   "scripts": {
     "dev": "vite",

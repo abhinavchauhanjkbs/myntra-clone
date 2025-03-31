@@ -26,7 +26,7 @@ function Header() {
                         <span>KIDS</span>
                     </div>
                     <div className='nav_item nav_item_home' onClick={() => navigate('/products')}>
-                        <span>HOME & LIVING</span>
+                        <span>HOME</span>
                     </div>
                     <div className='nav_item nav_item_beauty' onClick={() => navigate('/products')}>
                         <span>BEAUTY</span>

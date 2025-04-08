@@ -1,22 +1,30 @@
-/* https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png*/
-
 .myntra_header {
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #e4e4e4;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* Internet Explorer/Edge */
-    user-select: none;         /* Standard */
-
+    padding: 0 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
+/* Left side: Made by Abhinav */
+.header_left {
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+/* Center: Myntra logo and nav */
 .header_navigation {
-    width: 50%;
-    padding: 0 50px;
     display: flex;
     align-items: center;
     gap: 30px;
+    flex: 1;
+    justify-content: center;
 }
 
 .header_logo {
@@ -30,6 +38,9 @@
 
 .nav {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
 }
 
 .nav_item {
@@ -66,20 +77,19 @@
     border-bottom: 3px solid #0db7af;
 }
 
+/* Right side: Search and icons */
 .header_nav {
-    width: 50%;
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    gap: 20px;
 }
 
 .header_search {
-    flex: 1;
     position: relative;
 }
 
 .header_search input {
-    width: 90%;
+    width: 300px;
     height: 45px;
     background: #f5f5f6;
     border: none;
@@ -101,6 +111,7 @@
 
 .header_items {
     display: flex;
+    align-items: center;
 }
 
 .header_item {
@@ -144,4 +155,49 @@
     background-position: -685px -116px;
     scale: 0.6;
     background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+}
+
+.made_by {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #ff3e6c;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.made_by_text {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.abhinav_text {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff3f6c, #ff6f61, #ec008c, #f26a10);
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    animation: floatIn 1s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Optional animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
 }

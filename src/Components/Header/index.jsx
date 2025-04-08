@@ -1,20 +1,24 @@
 import React from 'react'
-import "./Header.css"
+import './Header.css'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { getCartData } from '../../Redux/Slices/productSlice'
 
 function Header() {
-
     const navigate = useNavigate()
-
     const cart = useSelector(getCartData)
 
     return (
         <div className='myntra_header'>
+            {/* Made by Abhinav - Left Section */}
+            <div className='made_by'>
+                <span className='made_by_text'>Made By</span>
+                <span className='abhinav_text'>Abhinav</span>
+            </div>
+
+            {/* Center Section: Logo + Navigation */}
             <div className='header_navigation'>
-                <div className='header_logo' onClick={() => navigate('/')}>
-                </div>
+                <div className='header_logo' onClick={() => navigate('/')}></div>
                 <div className='nav'>
                     <div className='nav_item nav_item_men' onClick={() => navigate('/products')}>
                         <span>MEN</span>
@@ -36,11 +40,13 @@ function Header() {
                     </div>
                 </div>
             </div>
+
+            {/* Right Section: Search + Icons */}
             <div className='header_nav'>
                 <div className='header_search'>
                     <input
                         type='text'
-                        placeholder='Search for products, branch and more'
+                        placeholder='Search for products, brand and more'
                     />
                     <i className='search_icon'></i>
                 </div>

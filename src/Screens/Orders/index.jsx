@@ -32,7 +32,7 @@ function Orders() {
                                 actualPrice={item.MRP}
                                 discount={item.discount}
                                 qty={item.qty}
-                                type={'cart'}
+                                type={'orders'}
                                 id={item.id}
                                 data={item}
                             />

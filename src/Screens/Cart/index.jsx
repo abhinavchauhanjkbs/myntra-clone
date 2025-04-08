@@ -4,20 +4,20 @@ import HProductCard from '../../Components/HProductCard'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCartData, setCart, setOrders } from '../../Redux/Slices/productSlice'
 import EmptyData from '../../Components/EmptyData'
+import { useNavigate } from 'react-router-dom' // ✅ ADDED
 
 function Cart() {
 
     const cart = useSelector(getCartData)
 
     const dispatch = useDispatch()
+    const navigate = useNavigate() // ✅ ADDED
 
     const handlePlaceOrder = () => {
-
         dispatch(setOrders(cart))
         dispatch(setCart([]))
-
+        navigate('/orders') // ✅ ADDED REDIRECT
     }
-
 
     if (cart.length === 0) {
         return <EmptyData />
@@ -67,7 +67,7 @@ function Cart() {
                         <tr>
                             <td>Total MRP</td>
                             <td></td>
-                            <td>₹{getTotalAmount(cart)}</td> {/* Reducer function*/}
+                            <td>₹{getTotalAmount(cart)}</td>
                         </tr>
                         <tr>
                             <td>Platform free</td>
@@ -82,7 +82,7 @@ function Cart() {
                         <tr className='total_amount'>
                             <td>Total Amount</td>
                             <td></td>
-                            <td>₹{getTotalAmount(cart)}</td> {/* Reducer function*/}
+                            <td>₹{getTotalAmount(cart)}</td>
                         </tr>
                     </table>
                     <button onClick={handlePlaceOrder}>PLACE ORDER</button>
@@ -94,11 +94,8 @@ function Cart() {
 
 export default Cart;
 
-
-function getTotalAmount(list) {
-
+const getTotalAmount = list => {
     return list.reduce((a, b) => {
         return a + (parseInt(b.price) * parseInt(b.qty))
     }, 0)
-
-}
+};

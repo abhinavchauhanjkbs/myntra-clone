@@ -8,6 +8,16 @@ function Header() {
     const navigate = useNavigate()
     const cart = useSelector(getCartData)
 
+    const showTooltip = () => {
+        const tooltip = document.getElementById('search_tooltip')
+        if (tooltip) tooltip.style.display = 'block'
+    }
+
+    const hideTooltip = () => {
+        const tooltip = document.getElementById('search_tooltip')
+        if (tooltip) tooltip.style.display = 'none'
+    }
+
     return (
         <div className='myntra_header'>
             {/* Made by Abhinav - Left Section */}
@@ -43,12 +53,21 @@ function Header() {
 
             {/* Right Section: Search + Icons */}
             <div className='header_nav'>
-                <div className='header_search'>
+                <div
+                    className='header_search'
+                    onMouseEnter={showTooltip}
+                    onMouseLeave={hideTooltip}
+                >
                     <input
                         type='text'
                         placeholder='Search for products, brand and more'
+                        onFocus={showTooltip}
+                        onBlur={hideTooltip}
                     />
                     <i className='search_icon'></i>
+                    <div id='search_tooltip' className='search_tooltip'>
+                        You can see limited data through the sections only due to dummy data content right now
+                    </div>
                 </div>
                 <div className='header_items'>
                     <div className='header_item' onClick={() => navigate('/orders')}>

@@ -5,7 +5,6 @@ import ProductCard from '../../Components/ProductCard'
 import { useSelector } from 'react-redux'
 import { getProducts } from '../../Redux/Slices/productSlice'
 
-
 const Filter_Enum = {
     "SEARCH": "search",
     "PRICE": "price"
@@ -17,7 +16,6 @@ const initialState = {
 }
 
 function reducer(state, action) {
-
     switch (action.type) {
         case Filter_Enum.SEARCH:
             return { ...state, [Filter_Enum.SEARCH]: action.payload }
@@ -26,23 +24,15 @@ function reducer(state, action) {
         default:
             return state
     }
-
 }
 
-
 function Products() {
-
     const [state, dispatcher] = useReducer(reducer, initialState)
-
     const products = useSelector(getProducts)
 
     const filteredProcducts = useMemo(() => {
-
         if (state.search !== '' || state.price !== '') {
-            // filters
-
             let output = [...products].filter((item) => {
-
                 let name = false
                 let brand = false
 
@@ -54,15 +44,12 @@ function Products() {
 
             if (state.price === 'highlow') {
                 return output.sort((a, b) => b.price - a.price)
-            }
-            else {
+            } else {
                 return output.sort((a, b) => a.price - b.price)
             }
-        }
-        else {
+        } else {
             return products
         }
-
     }, [state, products])
 
     return (

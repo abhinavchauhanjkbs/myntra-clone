@@ -1,3 +1,8 @@
+# myntra-clone
+A fully responsive e-commerce website built using React, Redux, and Vite. Features include product listings, search &amp; filters, shopping cart, wishlist, and user authentication.
+## ⚠️ Legal Notice
+This project is publicly available for viewing purposes only. You are NOT allowed to copy, modify, or redistribute this code without permission.
+
 This project is a simple React.js application designed to demonstrate key concepts such as Hooks, React Router, Redux Toolkit, and component layouts.
 
 📚 Topics Covered

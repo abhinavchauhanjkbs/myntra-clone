@@ -89,7 +89,7 @@
 }
 
 .header_search input {
-    width: 500px;
+    width: 200px;
     height: 45px;
     background: #f5f5f6;
     border: none;
@@ -162,7 +162,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 0 20px;
+    padding: 0;                    /* removed padding to go flush left */
+    margin-left: -10px;           /* shifts it more to the left */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     color: #ff3e6c;
@@ -172,23 +173,23 @@
 .made_by_text {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    transform: translateY(-2px);  /* Optional fine-tune */
 }
 
 .abhinav_text {
     font-size: 32px;
     font-weight: 800;
     background: linear-gradient(90deg, #ff3f6c, #ff6f61, #ec008c, #f26a10);
-    
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-
     animation: floatIn 1s ease-in-out;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    transform: translateY(-6px);  /* This moves just "ABHINAV" upward */
 }
 
 /* Optional animations */
